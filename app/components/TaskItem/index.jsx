@@ -2,7 +2,7 @@ import React from 'react';
 
 const TaskItem = (props) => {
     return (
-        <li className="bg-white dark:bg-gray-900 rounded-lg shadow p-4 flex items-center justify-between">
+        <li className="bg-white dark:bg-gray-900 rounded-lg shadow p-4 flex items-center justify-between m-2">
             <div className="flex items-center space-x-4">
                 <Checkbox id={props.id} checked={props.completed} onClick={() => props.handleTog(props.id)}/>
                 <div>
