@@ -19,7 +19,7 @@ export default function TaskList() {
 
     setTasks(newTasks)
     setState({
-      value: "",
+      value: state.value,
       lastId: state.lastId + 1,
       filter: state.filter
     })
@@ -56,8 +56,10 @@ export default function TaskList() {
   };
 
   useEffect(() => {
-    const lTasks = JSON.parse(localStorage.getItem("tasks"));
-    const lastId = JSON.parse(localStorage.getItem("id"));
+    const jtxt = localStorage.getItem("tasks");
+    const jid = localStorage.getItem("id");
+    const lTasks = JSON.parse(jtxt === null ? "[]" : jtxt);
+    const lastId = JSON.parse(jid === null ? '0' : jid);
     setTasks(lTasks);
     setState({
       value: "",
